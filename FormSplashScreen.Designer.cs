@@ -1,5 +1,5 @@
 ﻿
-namespace SisLanchonete3
+namespace SisLanchonete2
 {
     partial class FormSplashScreen
     {
@@ -35,9 +35,9 @@ namespace SisLanchonete3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SisLanchonete3.Properties.Resources.lanchonete_logo1;
+            this.BackgroundImage = global::SisLanchonete2.Properties.Resources.lanchonete_logo1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(418, 320);
+            this.ClientSize = new System.Drawing.Size(486, 324);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
-namespace SisLanchonete3
+namespace SisLanchonete2
 {
     public partial class FormPrincipal : Form
     {
@@ -20,6 +21,31 @@ namespace SisLanchonete3
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuario formUsuario = new FormUsuario();
+            formUsuario.Show();
+        }
+
+        private void testeDeBancoDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String str = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\SisLanchonete2\\DbLanchonete.mdf;Integrated Security=True";
+                String query = "SELECT * FROM Usuario";
+                SqlConnection con = new SqlConnection(str);
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                DataSet ds = new DataSet();
+                MessageBox.Show("Conectado ao Banco de Dados!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message, "Erro de Acesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("SisLanchonete3")]
+[assembly: AssemblyTitle("SisLanchonete2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SisLanchonete3")]
+[assembly: AssemblyProduct("SisLanchonete2")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // O GUID a seguir será destinado à ID de typelib se este projeto for exposto para COM
-[assembly: Guid("586dce0c-b161-44c9-bfcf-2c11ac65f885")]
+[assembly: Guid("d13f5be6-bd78-4813-9139-c7d3a19f6a5c")]
 
 // As informações da versão de um assembly consistem nos quatro valores a seguir:
 //

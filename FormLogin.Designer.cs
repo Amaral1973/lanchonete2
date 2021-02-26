@@ -1,5 +1,5 @@
 ﻿
-namespace SisLanchonete3
+namespace SisLanchonete2
 {
     partial class FormLogin
     {
@@ -40,7 +40,7 @@ namespace SisLanchonete3
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(44, 121);
+            this.btnLogin.Location = new System.Drawing.Point(70, 129);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace SisLanchonete3
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(12, 9);
+            this.lblLogin.Location = new System.Drawing.Point(29, 13);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(38, 13);
             this.lblLogin.TabIndex = 1;
@@ -60,16 +60,16 @@ namespace SisLanchonete3
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(13, 26);
+            this.txtLogin.Location = new System.Drawing.Point(32, 29);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(258, 20);
+            this.txtLogin.Size = new System.Drawing.Size(260, 20);
             this.txtLogin.TabIndex = 2;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(13, 79);
+            this.txtSenha.Location = new System.Drawing.Point(32, 84);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(258, 20);
+            this.txtSenha.Size = new System.Drawing.Size(260, 20);
             this.txtSenha.TabIndex = 4;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -77,7 +77,7 @@ namespace SisLanchonete3
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(12, 62);
+            this.lblSenha.Location = new System.Drawing.Point(29, 68);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(43, 13);
             this.lblSenha.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace SisLanchonete3
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(150, 121);
+            this.btnCancelar.Location = new System.Drawing.Point(184, 129);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -98,7 +98,7 @@ namespace SisLanchonete3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 173);
+            this.ClientSize = new System.Drawing.Size(336, 181);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.lblSenha);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisLanchonete3
+namespace SisLanchonete2
 {
     static class Program
     {

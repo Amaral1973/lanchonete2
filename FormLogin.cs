@@ -9,22 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace SisLanchonete3
+namespace SisLanchonete2
 {
     public partial class FormLogin : Form
     {
         public FormLogin()
         {
             InitializeComponent();
-            FormSplashScreen formSplash = new FormSplashScreen();
-            formSplash.Show();
+            FormSplashScreen formSplashScreen = new FormSplashScreen();
+            formSplashScreen.Show();
             Thread.Sleep(3000);
-            formSplash.Close();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            formSplashScreen.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -33,17 +28,21 @@ namespace SisLanchonete3
             String senha = txtSenha.Text;
             if (login == "teste" && senha == "teste")
             {
-                FormPrincipal principal = new FormPrincipal();
-                principal.Show();
+                FormPrincipal formPrincipal = new FormPrincipal();
+                formPrincipal.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Login ou senha incorretos! Tenten novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Login ou senha incorreta! Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLogin.Text = "";
                 txtSenha.Text = "";
-                txtLogin.Focus();
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
