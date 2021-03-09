@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace SisLanchonete2
+namespace SisLanchonete
 {
     public partial class FormUsuario : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\SisLanchonete2\\DbLanchonete.mdf;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\SisLanchonete\\DbLanchonete.mdf;Integrated Security=True");
         public FormUsuario()
         {
             InitializeComponent();
@@ -42,6 +41,7 @@ namespace SisLanchonete2
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            con.Close();
             try
             {
                 con.Open();
@@ -54,7 +54,7 @@ namespace SisLanchonete2
                 cmd.Parameters.AddWithValue("@senha", SqlDbType.NChar).Value = txtSenha.Text.Trim();
                 cmd.ExecuteNonQuery();
                 CarregaDGV();
-                MessageBox.Show("Usuário cadatrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNome.Text = "";
                 txtCargo.Text = "";
                 txtLogin.Text = "";
@@ -64,7 +64,7 @@ namespace SisLanchonete2
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(er.Message);
             }
         }
 
@@ -75,7 +75,7 @@ namespace SisLanchonete2
                 con.Open();
                 SqlCommand cmd = new SqlCommand("AtualizarUsuario", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text.Trim());
+                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text.Trim());
                 cmd.Parameters.AddWithValue("@nome", SqlDbType.NChar).Value = txtNome.Text.Trim();
                 cmd.Parameters.AddWithValue("@cargo", SqlDbType.NChar).Value = txtCargo.Text.Trim();
                 cmd.Parameters.AddWithValue("@admissao", SqlDbType.Date).Value = dtpAdmissao.Value;
@@ -83,7 +83,7 @@ namespace SisLanchonete2
                 cmd.Parameters.AddWithValue("@senha", SqlDbType.NChar).Value = txtSenha.Text.Trim();
                 cmd.ExecuteNonQuery();
                 CarregaDGV();
-                MessageBox.Show("Usuário atualizado com sucesso!", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNome.Text = "";
                 txtCargo.Text = "";
                 txtLogin.Text = "";
@@ -93,7 +93,7 @@ namespace SisLanchonete2
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(er.Message);
             }
         }
 
@@ -104,10 +104,10 @@ namespace SisLanchonete2
                 con.Open();
                 SqlCommand cmd = new SqlCommand("ExcluirUsuario", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text.Trim());
+                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text.Trim());
                 cmd.ExecuteNonQuery();
                 CarregaDGV();
-                MessageBox.Show("Usuário apagado com sucesso!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNome.Text = "";
                 txtCargo.Text = "";
                 txtLogin.Text = "";
@@ -117,7 +117,7 @@ namespace SisLanchonete2
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(er.Message);
             }
         }
 
@@ -130,7 +130,7 @@ namespace SisLanchonete2
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("LocalizarUsuario", con);
-            cmd.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text.Trim());
+            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text.Trim());
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader rd = cmd.ExecuteReader();
             if (rd.Read())
@@ -139,7 +139,7 @@ namespace SisLanchonete2
                 txtCargo.Text = rd["cargo"].ToString();
                 txtLogin.Text = rd["login"].ToString();
                 txtSenha.Text = rd["senha"].ToString();
-                dtpAdmissao.Value = Convert.ToDateTime(rd["admissao"]);
+                dtpAdmissao.Value = Convert.ToDateTime(rd["admisao"]);
                 con.Close();
             }
             else
@@ -159,6 +159,26 @@ namespace SisLanchonete2
                 dtpAdmissao.Value = Convert.ToDateTime(row.Cells[3].Value);
                 txtLogin.Text = row.Cells[4].Value.ToString();
                 txtSenha.Text = row.Cells[5].Value.ToString();
+            }
+        }
+
+        private void txtLogin_Leave(object sender, EventArgs e)
+        {
+            string usu = "SELECT nome, login FROM Usuario WHERE nome = @nome AND login = @login";
+            SqlCommand cmd = new SqlCommand(usu, con);
+            cmd.Parameters.AddWithValue("@nome", SqlDbType.NChar).Value = txtNome.Text.Trim();
+            cmd.Parameters.AddWithValue("@login", SqlDbType.NChar).Value = txtLogin.Text.Trim();
+            con.Open();
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader usuario = cmd.ExecuteReader();
+            if (usuario.HasRows)
+            {
+                MessageBox.Show("Usuário já cadastrado! Tente novamente.", "Usuário já cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Close();
+                txtNome.Focus();
+                txtCargo.Text = "";
+                dtpAdmissao.Value = DateTime.Now;
+                txtLogin.Text = "";
             }
         }
     }

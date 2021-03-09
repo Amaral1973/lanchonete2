@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace SisLanchonete2.Properties
+namespace SisLanchonete.Properties
 {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]

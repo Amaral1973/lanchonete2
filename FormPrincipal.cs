@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace SisLanchonete2
+namespace SisLanchonete
 {
     public partial class FormPrincipal : Form
     {
@@ -23,29 +23,41 @@ namespace SisLanchonete2
             Application.Exit();
         }
 
-        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormUsuario formUsuario = new FormUsuario();
-            formUsuario.Show();
-        }
-
-        private void testeDeBancoDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bancoDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                String str = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\SisLanchonete2\\DbLanchonete.mdf;Integrated Security=True";
+                String str = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\SisLanchonete\\DbLanchonete.mdf;Integrated Security=True";
                 String query = "SELECT * FROM Usuario";
                 SqlConnection con = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
                 DataSet ds = new DataSet();
-                MessageBox.Show("Conectado ao Banco de Dados!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Conectado ao Banco de Dados!", "Teste de Banco", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message, "Erro de Acesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuario formUsuario = new FormUsuario();
+            formUsuario.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCliente formCliente = new FormCliente();
+            formCliente.Show();
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProduto formProduto = new FormProduto();
+            formProduto.Show();
         }
     }
 }

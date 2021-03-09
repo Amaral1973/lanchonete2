@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SisLanchonete2.Properties {
+namespace SisLanchonete.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SisLanchonete2.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SisLanchonete2.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SisLanchonete.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,101 +61,61 @@ namespace SisLanchonete2.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon clientes {
+        internal static System.Drawing.Bitmap clientes {
             get {
                 object obj = ResourceManager.GetObject("clientes", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clientes1 {
-            get {
-                object obj = ResourceManager.GetObject("clientes1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
-        /// </summary>
-        internal static System.Drawing.Icon lanchonete_logo {
+        internal static System.Drawing.Bitmap lanchonete_logo {
             get {
                 object obj = ResourceManager.GetObject("lanchonete_logo", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
-        internal static System.Drawing.Bitmap lanchonete_logo1 {
+        internal static System.Drawing.Icon lanchonete_logo1 {
             get {
                 object obj = ResourceManager.GetObject("lanchonete_logo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon produtos {
+        internal static System.Drawing.Bitmap produtos {
             get {
                 object obj = ResourceManager.GetObject("produtos", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap produtos1 {
-            get {
-                object obj = ResourceManager.GetObject("produtos1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
-        /// </summary>
-        internal static System.Drawing.Icon usuarios {
+        internal static System.Drawing.Bitmap usuarios {
             get {
                 object obj = ResourceManager.GetObject("usuarios", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap usuarios1 {
-            get {
-                object obj = ResourceManager.GetObject("usuarios1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
-        /// </summary>
-        internal static System.Drawing.Icon vendas {
-            get {
-                object obj = ResourceManager.GetObject("vendas", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vendas1 {
+        internal static System.Drawing.Bitmap vendas {
             get {
-                object obj = ResourceManager.GetObject("vendas1", resourceCulture);
+                object obj = ResourceManager.GetObject("vendas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

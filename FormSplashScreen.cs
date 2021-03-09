@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisLanchonete2
+namespace SisLanchonete
 {
     public partial class FormSplashScreen : Form
     {

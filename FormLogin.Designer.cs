@@ -1,5 +1,5 @@
 ﻿
-namespace SisLanchonete2
+namespace SisLanchonete
 {
     partial class FormLogin
     {
@@ -29,67 +29,64 @@ namespace SisLanchonete2
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.btnLogar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnLogin
+            // lblUsuario
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(70, 129);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(13, 13);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "Usuário";
             // 
-            // lblLogin
+            // txtUsuario
             // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(29, 13);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(38, 13);
-            this.lblLogin.TabIndex = 1;
-            this.lblLogin.Text = "Login";
+            this.txtUsuario.Location = new System.Drawing.Point(13, 30);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(296, 20);
+            this.txtUsuario.TabIndex = 1;
             // 
-            // txtLogin
+            // btnLogar
             // 
-            this.txtLogin.Location = new System.Drawing.Point(32, 29);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(260, 20);
-            this.txtLogin.TabIndex = 2;
+            this.btnLogar.Location = new System.Drawing.Point(60, 130);
+            this.btnLogar.Name = "btnLogar";
+            this.btnLogar.Size = new System.Drawing.Size(75, 23);
+            this.btnLogar.TabIndex = 3;
+            this.btnLogar.Text = "Login";
+            this.btnLogar.UseVisualStyleBackColor = true;
+            this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(32, 84);
+            this.txtSenha.Location = new System.Drawing.Point(12, 90);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(260, 20);
-            this.txtSenha.TabIndex = 4;
+            this.txtSenha.Size = new System.Drawing.Size(297, 20);
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(29, 68);
+            this.lblSenha.Location = new System.Drawing.Point(12, 73);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(43, 13);
+            this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 3;
             this.lblSenha.Text = "Senha";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(184, 129);
+            this.btnCancelar.Location = new System.Drawing.Point(175, 130);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -98,15 +95,14 @@ namespace SisLanchonete2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 181);
+            this.ClientSize = new System.Drawing.Size(337, 177);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.btnLogin);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.btnLogar);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.lblUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -117,9 +113,9 @@ namespace SisLanchonete2
 
         #endregion
 
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Button btnLogar;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Button btnCancelar;

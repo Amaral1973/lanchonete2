@@ -1,5 +1,5 @@
 ﻿
-namespace SisLanchonete2
+namespace SisLanchonete
 {
     partial class FormPrincipal
     {
@@ -31,24 +31,24 @@ namespace SisLanchonete2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bancoDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testeDeBancoDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.cadastrosToolStripMenuItem,
             this.vendasToolStripMenuItem,
-            this.ferramentasToolStripMenuItem,
+            this.testesToolStripMenuItem,
             this.sobreToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -57,15 +57,12 @@ namespace SisLanchonete2
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
-            // 
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem});
+            this.usuáriosToolStripMenuItem,
+            this.clienteToolStripMenuItem,
+            this.produtoToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -77,19 +74,33 @@ namespace SisLanchonete2
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+            // 
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.vendasToolStripMenuItem.Text = "Vendas";
             // 
-            // ferramentasToolStripMenuItem
+            // testesToolStripMenuItem
             // 
-            this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testeDeBancoDeDadosToolStripMenuItem});
-            this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
-            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.ferramentasToolStripMenuItem.Text = "Ferramentas";
+            this.testesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bancoDeDadosToolStripMenuItem});
+            this.testesToolStripMenuItem.Name = "testesToolStripMenuItem";
+            this.testesToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.testesToolStripMenuItem.Text = "Testes";
+            // 
+            // bancoDeDadosToolStripMenuItem
+            // 
+            this.bancoDeDadosToolStripMenuItem.Name = "bancoDeDadosToolStripMenuItem";
+            this.bancoDeDadosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.bancoDeDadosToolStripMenuItem.Text = "Banco de Dados";
+            this.bancoDeDadosToolStripMenuItem.Click += new System.EventHandler(this.bancoDeDadosToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
@@ -104,12 +115,12 @@ namespace SisLanchonete2
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // testeDeBancoDeDadosToolStripMenuItem
+            // produtoToolStripMenuItem
             // 
-            this.testeDeBancoDeDadosToolStripMenuItem.Name = "testeDeBancoDeDadosToolStripMenuItem";
-            this.testeDeBancoDeDadosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.testeDeBancoDeDadosToolStripMenuItem.Text = "Teste de Banco de Dados";
-            this.testeDeBancoDeDadosToolStripMenuItem.Click += new System.EventHandler(this.testeDeBancoDeDadosToolStripMenuItem_Click);
+            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtoToolStripMenuItem.Text = "Produto";
+            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -119,10 +130,8 @@ namespace SisLanchonete2
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormPrincipal";
-            this.Text = "Sistema Lanchonete 1.1.1";
+            this.Text = "Lanchonete Burguer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -134,13 +143,14 @@ namespace SisLanchonete2
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ferramentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bancoDeDadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testeDeBancoDeDadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
     }
 }
