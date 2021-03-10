@@ -43,7 +43,6 @@ namespace SisLanchonete
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            con.Close();
             try
             {
                 con.Open();
@@ -141,12 +140,15 @@ namespace SisLanchonete
                 txtCidade.Text = rd["cidade"].ToString();
                 txtCelular.Text = rd["celular"].ToString();
                 txtEmail.Text = rd["email"].ToString();
+                rd.Close();
                 con.Close();
             }
             else
             {
                 MessageBox.Show("Nenhum cliente localizado com este CPF?", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            rd.Close();
+            con.Close();
         }
 
         private void dgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,9 +175,13 @@ namespace SisLanchonete
             if (cliente.HasRows)
             {
                 MessageBox.Show("CPF de cliente já cadastrado! Tente novamente.", "Cliente já cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCPF.Text = "";
                 txtCPF.Focus();
+                cliente.Close();
                 con.Close();
             }
+            cliente.Close();
+            con.Close();
         }
     }
 }

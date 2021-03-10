@@ -41,7 +41,6 @@ namespace SisLanchonete
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            con.Close();
             try
             {
                 con.Open();
@@ -140,12 +139,15 @@ namespace SisLanchonete
                 txtLogin.Text = rd["login"].ToString();
                 txtSenha.Text = rd["senha"].ToString();
                 dtpAdmissao.Value = Convert.ToDateTime(rd["admisao"]);
+                rd.Close();
                 con.Close();
             }
             else
             {
                 MessageBox.Show("Nenhum usuário localizado com este ID?", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            rd.Close();
+            con.Close();
         }
 
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -174,12 +176,16 @@ namespace SisLanchonete
             if (usuario.HasRows)
             {
                 MessageBox.Show("Usuário já cadastrado! Tente novamente.", "Usuário já cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usuario.Close();
                 con.Close();
+                txtNome.Text = "";
                 txtNome.Focus();
                 txtCargo.Text = "";
                 dtpAdmissao.Value = DateTime.Now;
                 txtLogin.Text = "";
             }
+            usuario.Close();
+            con.Close();
         }
     }
 }

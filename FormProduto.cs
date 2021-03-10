@@ -50,7 +50,6 @@ namespace SisLanchonete
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            con.Close();
             try
             {
                 con.Open();
@@ -144,12 +143,15 @@ namespace SisLanchonete
                 txtTipo.Text = rd["tipo"].ToString();
                 txtQuantidade.Text = rd["quantidade"].ToString();
                 txtValor.Text = rd["valor"].ToString();
+                rd.Close();
                 con.Close();
             }
             else
             {
                 MessageBox.Show("Nenhum produto localizado com este ID?", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            rd.Close();
+            con.Close();
         }
 
         private void dgvProduto_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,9 +178,13 @@ namespace SisLanchonete
             if (produto.HasRows)
             {
                 MessageBox.Show("Produto já cadastrado! Tente novamente.", "Produto já cadastrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNome.Text = "";
                 txtNome.Focus();
+                produto.Close();
                 con.Close();
             }
+            produto.Close();
+            con.Close();
         }
     }
 }
